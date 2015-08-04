@@ -8,4 +8,9 @@ Implement full text search by source: ./data.json
 
 Open: http://localhost:8080 for search
 
-
+## Improve
+- logging;
+- JSON source reading as some Data provider or source;
+- exception handling
+- pagination
+- design :)
