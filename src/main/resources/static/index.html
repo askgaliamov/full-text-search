@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="search-app">
+
+<head>
+    <title>Sample search application</title>
+    <link href="assets/bootstrap.css" rel="stylesheet">
+</head>
+
+<body class="ng-cloak" ng-controller="searchController">
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <input ng-model="searchQuery" ng-change="search()" type="text" class="form-control"
+                   placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" aria-label="Search">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+        </div>
+    </div>
+</div>
+<hr/>
+<ul>
+    <li ng-repeat="result in searchResult">
+        <ul>
+            <li ng-repeat="(key,val) in result">{{key}}: {{val}}</li>
+        </ul>
+        <br/>
+    </li>
+</ul>
+
+<script src="assets/bootstrap.js" type="text/javascript"></script>
+</body>
+</html>

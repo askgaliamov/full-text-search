@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro">
+
+  <group name="bootstrap">
+    <css>classpath:bootstrap/less/bootstrap.less</css>
+    <css>classpath:css/*.less</css>
+
+    <js>webjar:angular.js</js>
+    <js>webjar:angular-route.js</js>
+    <js>webjar:ui-grid.js</js>
+    <js>webjar:ui-bootstrap.js</js>
+    <js>webjar:ui-bootstrap-tpls.js</js>
+    <js>classpath:js/*.js</js>
+  </group>
+
+</groups>

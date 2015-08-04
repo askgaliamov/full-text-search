@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'full-text-search'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    lucentVersion = '5.2.1'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    compile("ro.isdc.wro4j:wro4j-extensions:1.7.8")
+    compile 'org.webjars:angularjs:1.4.3'
+    compile 'org.webjars:ui-grid:3.0.1'
+    compile 'org.webjars:angular-ui-bootstrap:0.13.1'
+
+    compile "org.apache.lucene:lucene-core:$lucentVersion"
+    compile "org.apache.lucene:lucene-queryparser:$lucentVersion"
+    compile "org.apache.lucene:lucene-analyzers-common:$lucentVersion"
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    // end::tests[]
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
